@@ -6,7 +6,7 @@ Usage:
 ## docker
 
 ``` 
-docker run -v /docker/containers/rssbridge/whitelist.txt:/var/www/html/whitelist.txt:rw - p 80:80 anansii/rss-bridge
+docker run -v /docker/containers/rss-bridge/whitelist.txt:/var/www/html/whitelist.txt:rw - p 80:80 anansii/rss-bridge
 ```
 
 
@@ -18,12 +18,12 @@ docker run -v /docker/containers/rssbridge/whitelist.txt:/var/www/html/whitelist
 version: '3'
 
 services:
-  rssbridge:
+  rss-bridge:
     image: anansii/rss-bridge
-    container_name: rssbridge
+    container_name: rss-bridge
     restart: unless-stopped
     volumes:
-      - /docker/containers/rssbridge/whitelist.txt:/var/www/html/whitelist.txt:rw
+      - /docker/containers/rss-bridge/whitelist.txt:/var/www/html/whitelist.txt:rw
     ports:
       - 80:80
 
